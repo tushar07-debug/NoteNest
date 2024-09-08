@@ -1,8 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
-
-
+import './profile.css';
 
 const Profile = () => {
     const [name, setName] = useState("");
@@ -16,33 +15,31 @@ const Profile = () => {
             try {
                 let response = await axios.post('http://localhost:3001/recentorder');
                 if (response.status === 200) {
-                    // console.log(response.data);
                     setData(response.data);
-                    
                 }
             }
             catch (err) {
-                toast.error(err.data);
+                toast.error(err.message); // Changed err.data to err.message
             }
         }
         fetch();
     }, [])
 
-    useEffect(()=>{
-        if(data.length>0){
-            const date=new Date(data[0].createdDate);
-            const dateobj=date.toDateString();
+    useEffect(() => {
+        if (data.length > 0) {
+            const date = new Date(data[0].createdDate);
+            const dateobj = date.toDateString();
             setDate(dateobj);
         }
-    },[data])
+    }, [data])
 
-    const handleCancel=()=>{
+    const handleCancel = () => {
         toast.info("Feature not available");
     }
 
     return (
-        <div className="container w-50 mt-2 mb-2 border border-2 border-dark-subtle rounded min-vh-100">
-            <div className="container ms-3 me-3 mt-5">
+        <div className="centered-wrapper">
+            <div className="container ">
                 <div className="d-flex">
                     <i className="fas fa-user me-3 fs-1 mt-1"></i>
                     <div className="text-light-emphasis">
@@ -50,26 +47,15 @@ const Profile = () => {
                         <p className="mt-0">Email: {data.length > 0 ? data[0].customer_email : ""}</p>
                     </div>
                 </div>
-                <hr />
+                
                 <div>
-                    <p className="border border-2 p-2">Address</p>
-                </div>
-                <hr />
-                <div>
-                    <h1 className="fs-4">
-                        Your Recent Order
-                    </h1>
-                    <div className="card mt-2 mb-2">
-                        <div className="m-3 ">
+                    <h1 className="fs-4">Your Recent Order</h1>
+                    <div className="card ">
+                        <div className="">
                             <div className="d-flex justify-content-between">
                                 <div>
                                     <p className="text-light-emphasis fw-bold mb-0">Order ID : <span className="fw-normal">{data.length > 0 ? data[0].id : 0}</span></p>
-                                    <p className="text-light-emphasis fw-bold mb-0">
-                                        Status :&nbsp;
-                                        <span className="fw-normal">
-                                            {status || "Created"}
-                                        </span>
-                                    </p>
+                                    <p className="text-light-emphasis fw-bold mb-0">Status :&nbsp;<span className="fw-normal">{status || "Created"}</span></p>
                                     <p className="text-light-emphasis fw-bold mb-0">Date : <span className="fw-normal">{date}</span></p>
                                 </div>
                                 <div>
@@ -91,7 +77,7 @@ const Profile = () => {
                                         <p className="mb-0 text-capitalize">address</p>
                                     </div>
                                 </div>
-                                <div className="">
+                                <div>
                                     <div className="text-light-emphasis">
                                         <p className="fw-bold mb-0">Payment</p>
                                         <p className="mb-0 text-capitalize">Method : Card</p>
@@ -106,16 +92,12 @@ const Profile = () => {
                                         const image = item.img.split(',')
                                         let count = 0;
                                         return (
-                                            < div key={item._id} className="d-flex overflow-scroll">
-                                                {image.map(data => {
-                                                    const img_1 = String(data);
-                                                    return (
-                                                        <div className="card me-2" key={count++} style={{ width: '10rem' }}>
-                                                            <img src={img_1} className="card_img" />
-                                                        </div>
-                                                    )
-                                                }
-                                                )}
+                                            <div key={item._id} className="d-flex overflow-scroll">
+                                                {image.map((imgSrc, index) => (
+                                                    <div className="card me-2" key={index} style={{ width: '10rem' }}>
+                                                        <img src={imgSrc} className="card_img" alt="Order item" />
+                                                    </div>
+                                                ))}
                                             </div>
                                         )
                                     })
@@ -125,7 +107,7 @@ const Profile = () => {
                     </div>
                 </div>
             </div>
-        </div >
+        </div>
     );
 }
 export default Profile;

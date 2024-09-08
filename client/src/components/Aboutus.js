@@ -2,7 +2,7 @@ import './Aboutus.css';
 
 const Aboutus = () => {
     return (
-        <div className="container">
+        
             <div>
                 <h1>About Us</h1>
                 <p>
@@ -42,7 +42,7 @@ const Aboutus = () => {
                     Explore our NoteNest today and discover the magic of reading. Whether you're seeking inspiration, knowledge, or pure entertainment, NoteNest is your destination for all things literary.
                 </p>
             </div>
-        </div>
+     
     );
 }
 

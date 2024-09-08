@@ -83,7 +83,7 @@ const Addtocartcard = ({ item, setChange }) => {
     }
 
     return (
-        <div className="container border mt-2 rounded">
+        
             <div className="row">
                 <div className="card mt-2 mb-3 border-0">
                     <div className="row g-0">
@@ -131,7 +131,7 @@ const Addtocartcard = ({ item, setChange }) => {
                     </div>
                 </div>
             </div>
-        </div>
+        
     );
 };
 

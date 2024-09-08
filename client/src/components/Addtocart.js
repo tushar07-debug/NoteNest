@@ -3,6 +3,7 @@ import Addtocartcard from "./Addtocartcard";
 import Billtocart from "./Billtocart";
 import { toast } from "react-toastify";
 import axios from "axios";
+import './Addtocart.css';
 
 const Addtocart = () => {
     const [data, setData] = useState([]);

@@ -1,18 +1,19 @@
 /* Container Styles */
 .container {
-    background-color: #f9f9f9;
+    background-color: #2c2c2c; /* Dark grey background */
     border-radius: 10px;
     padding: 20px;
     max-width: 600px;
     margin: 20px auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     animation: fadeIn 1s ease-in-out;
+    color: #ffffff; /* White text color */
 }
 
 /* Header Styles */
 .alert-primary {
-    background-color: #007bff;
-    color: white;
+    background-color: #444444; /* Grey background */
+    color: white; /* White text color */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 24px;
     letter-spacing: 1.5px;
@@ -22,6 +23,8 @@
 
 /* Input Fields Styles */
 .form-control {
+     /* Darker grey background for inputs */
+    color: #ffffff; /* White text color */
     border-radius: 5px;
     border: 1px solid #ccc;
     font-family: 'Roboto', sans-serif;
@@ -34,6 +37,7 @@
 .form-control:focus {
     border-color: #007bff;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    background-color: #dddddd; /* Slightly lighter grey when focused */
 }
 
 /* Button Styles */

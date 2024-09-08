@@ -1,48 +1,59 @@
-/* AboutUs.css */
+/* Aboutus.css */
 
-/* Fullscreen Container */
+/* Background and text styles */
+body {
+    background: radial-gradient(circle, #2c2c2c, #000000); /* Radial gradient background */
+    color: #ffffff; /* White text color */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* General container for the text */
 .container {
-    background: linear-gradient(120deg, #e3f2fd, #bbdefb); /* Light shades of blue */
-    border-radius: 12px;
+    max-width: 80%; /* Adjusted for better responsiveness */
+    margin: 0 auto;
     padding: 20px;
-    max-width: 100%;
-    height: 100vh;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Text Styles */
+/* Heading styles */
 h1 {
-    font-family: 'Merriweather', serif;
-    color: #000000; /* Black text color */
-    font-size: 2.5rem;
-    animation: fadeIn 2s ease-in-out;
+    font-size: 2.5rem; /* Increased font size */
+    color: #ffffff;
+    margin-bottom: 30px; /* Increased margin for spacing */
 }
 
-p, li p {
-    font-family: 'Open Sans', sans-serif;
-    color: #000000; /* Black text color */
-    font-size: 1.2rem;
-    animation: fadeIn 3s ease-in-out;
+/* Subheading styles */
+.fs-3 {
+    font-size: 1.75rem; /* Slightly larger font size for emphasis */
+    color: #cccccc; /* Slightly lighter grey for subheadings */
+    margin-top: 15px; /* Adjusted margin */
 }
 
-/* List Styles */
+/* Paragraph styles */
+p {
+    font-size: 1.125rem; /* Slightly larger font size */
+    line-height: 1.8; /* Increased line height for readability */
+    color: #ffffff;
+    margin-bottom: 25px; /* Increased margin for spacing */
+}
+
+/* List styles */
 ul {
-    list-style-type: disc;
-    margin-left: 20px;
+    list-style-type: disc; /* Changed from none to disc for bullet points */
+    padding-left: 20px; /* Added padding for list items */
 }
 
+li {
+    margin-bottom: 15px; /* Adjusted margin */
+}
+
+.fw-bold {
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* List item content */
 li p {
-    margin: 5px 0;
-}
-
-/* Animations */
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    margin: 10px 0; /* Adjusted margin for list items */
 }

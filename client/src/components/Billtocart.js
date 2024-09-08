@@ -29,6 +29,8 @@ export default function Billtocart({ totalquantity, totalamount, length }) {
         try {
             const stripe = await loadStripe('pk_test_51PYiEkLDujIwOUvsgGqFINeRQthKav2sU01n3IGgcRMOR981s19NQMZc3le1nZM55AVHq9bZkApwr52nFX2ue4xG005EATf0Rw');
             const user = sessionStorage.getItem('username');
+
+            
 //--------------------------------------------add books name function----------------------------------------------------------------------
             // const response = await axios.post('http://localhost:3001/bill', { user });
             // if (response.status === 200) {
@@ -52,9 +54,9 @@ export default function Billtocart({ totalquantity, totalamount, length }) {
     };
 
     return (
-        <div className="card mb-3 mt-2">
-            <div className="card-body">
-                <p className="text-primary fs-5 fw-bold">Price Details</p>
+        <div >
+            {/* <div className="card-body"> */}
+                {/* <p className="text-primary fs-5 fw-bold">Price Details</p> */}
                 <div className="d-flex flex-row">
                     <p className="me-auto">Price ({totalquantity} Books)</p>
                     <p className="ms-auto">Rs. {totalamount}</p>
@@ -68,7 +70,7 @@ export default function Billtocart({ totalquantity, totalamount, length }) {
                     <p className="ms-auto">Rs. {totalamount + (10 * length)}</p>
                 </div>
 
-                {stripePromise ? (
+                {/* {stripePromise ? (
                     <Elements className="container-fluid" stripe={stripePromise} key={1} >
                         <CheckoutForm price={totalamount + (10 * length)} />
 
@@ -79,8 +81,8 @@ export default function Billtocart({ totalquantity, totalamount, length }) {
                             Proceed to checkout
                         </button>
                     )
-                }
-            </div>
+                } */}
+            {/* </div> */}
         </div>
     );
 }
