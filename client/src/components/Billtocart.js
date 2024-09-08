@@ -55,8 +55,8 @@ export default function Billtocart({ totalquantity, totalamount, length }) {
 
     return (
         <div >
-            {/* <div className="card-body"> */}
-                {/* <p className="text-primary fs-5 fw-bold">Price Details</p> */}
+            <div className="card-body">
+                <p className="text-primary fs-5 fw-bold">Price Details</p>
                 <div className="d-flex flex-row">
                     <p className="me-auto">Price ({totalquantity} Books)</p>
                     <p className="ms-auto">Rs. {totalamount}</p>
@@ -70,7 +70,7 @@ export default function Billtocart({ totalquantity, totalamount, length }) {
                     <p className="ms-auto">Rs. {totalamount + (10 * length)}</p>
                 </div>
 
-                {/* {stripePromise ? (
+                {stripePromise ? (
                     <Elements className="container-fluid" stripe={stripePromise} key={1} >
                         <CheckoutForm price={totalamount + (10 * length)} />
 
@@ -81,8 +81,8 @@ export default function Billtocart({ totalquantity, totalamount, length }) {
                             Proceed to checkout
                         </button>
                     )
-                } */}
-            {/* </div> */}
+                }
+            </div>
         </div>
     );
 }

@@ -84,8 +84,8 @@ const Addtocartcard = ({ item, setChange }) => {
 
     return (
         
-            <div className="row">
-                <div className="card mt-2 mb-3 border-0">
+            <div className="card mt-2 mb-2 p-3 fs-5 fw-bold">
+                <div>
                     <div className="row g-0">
                         <div className="col-md-4 d-flex flex-column align-items-center">
                             <img
@@ -98,7 +98,7 @@ const Addtocartcard = ({ item, setChange }) => {
                                 <button className="btn btn-outline-primary w-25" onClick={handleQuanityDecrease}>-</button>
                                 <input
                                     type="number"
-                                    className="text-center w-75 form-control"
+                                    className="text-center w-75"
                                     placeholder="1"
                                     onChange={handleChange}
                                     value={Quantity}
@@ -109,8 +109,8 @@ const Addtocartcard = ({ item, setChange }) => {
                             </div>
                         </div>
                         <div className="col-md-8 mt-0">
-                            <div className="card-body">
-                                <h1 className="alert alert-warning fs-3">{textlimiter(Title, 35)}</h1>
+                            <div className="card-body ">
+                                <h1 className=" fs-3">{textlimiter(Title, 35)}</h1>
                                 <p className="mb-1">Format: Hardcover</p>
                                 <p className="fw-bold mb-1 mt-25 mb-2">Rs. {Price}</p>
                                 <div className="d-flex flex-row flex-wrap justify-content-between">

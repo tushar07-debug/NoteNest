@@ -3,20 +3,20 @@ import './Aboutus.css';
 const Aboutus = () => {
     return (
         
-            <div>
-                <h1>About Us</h1>
+            <div >
+                <h1 className="card mt-2 mb-2 p-3 fs-5 fw-bold text-center">About Us</h1>
                 <p>
                     At NoteNest, we believe that notes have the power to transform lives. Nestled in the heart of Delhi, our NoteNest is more than just a place to buy notes—it's a community hub for readers, writers, and dreamers.
                 </p>
-                <h1 className="fs-3">Our Story</h1>
+                <h1 className="card mt-2 mb-2 p-3 fs-5 fw-bold text-center">Our Story</h1>
                 <p>
                     Founded in 2024, NoteNest started with a simple vision: to create a welcoming space where people of all ages could discover the joy of reading. What began as a small, cozy shop has grown into a beloved local treasure, thanks to the support and enthusiasm of our incredible customers.
                 </p>
-                <h1 className="fs-3">Our Mission</h1>
+                <h1 className="card mt-2 mb-2 p-3 fs-5 fw-bold text-center">Our Mission</h1>
                 <p>
                     Our mission is to foster a love of reading by offering a carefully curated selection of notes across all genres, from timeless classics to the latest bestsellers. We are committed to providing exceptional customer service and creating a warm, inviting atmosphere where every visitor feels at home.
                 </p>
-                <h1 className="fs-3">What We Offer</h1>
+                <h1 className="card mt-2 mb-2 p-3 fs-5 fw-bold text-center">What We Offer</h1>
                 <ul>
                     <li>
                         <p className="fw-bold">A Diverse Collection:</p>
@@ -33,11 +33,11 @@ const Aboutus = () => {
                         </p>
                     </li>
                 </ul>
-                <h1 className="fs-3">Meet the Team</h1>
+                <h1 className="card mt-2 mb-2 p-3 fs-5 fw-bold text-center">Meet the Team</h1>
                 <p>
                     Our passionate team of book enthusiasts is dedicated to making your visit to [Your NoteNest Name] a memorable one. From our friendly staff to our knowledgeable book buyers, everyone here shares a love for literature and a commitment to customer satisfaction.
                 </p>
-                <h1 className="fs-3">Visit Us</h1>
+                <h1  className="card mt-2 mb-2 p-3 fs-5 fw-bold text-center">Visit Us</h1>
                 <p>
                     Explore our NoteNest today and discover the magic of reading. Whether you're seeking inspiration, knowledge, or pure entertainment, NoteNest is your destination for all things literary.
                 </p>
