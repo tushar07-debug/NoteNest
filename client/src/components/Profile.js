@@ -11,19 +11,35 @@ const Profile = () => {
     const [date, setDate] = useState("");
 
     useEffect(() => {
-        async function fetch() {
+        async function fetchRecentOrder() {
             try {
-                let response = await axios.post('http://localhost:3001/recentorder');
+                // Modify the request with a payload if the server expects any data
+                const requestData = {
+                    userId: sessionStorage.getItem('userId') // Example payload, modify according to your needs
+                };
+
+                let response = await axios.post('http://localhost:3001/recentorder', requestData);
+
                 if (response.status === 200) {
                     setData(response.data);
+                } else {
+                    toast.error(`Unexpected response code: ${response.status}`);
+                }
+            } catch (err) {
+                if (err.response) {
+                    // Server responded with a status code out of the range of 2xx
+                    toast.error(`Error: ${err.response.data}. Status code: ${err.response.status}`);
+                } else if (err.request) {
+                    // The request was made but no response was received
+                    toast.error('No response received from the server.');
+                } else {
+                    // Something else caused the error
+                    toast.error(`Error: ${err.message}`);
                 }
             }
-            catch (err) {
-                toast.error(err.message); // Changed err.data to err.message
-            }
         }
-        fetch();
-    }, [])
+        fetchRecentOrder();
+    }, []);
 
     useEffect(() => {
         if (data.length > 0) {
@@ -31,11 +47,11 @@ const Profile = () => {
             const dateobj = date.toDateString();
             setDate(dateobj);
         }
-    }, [data])
+    }, [data]);
 
     const handleCancel = () => {
         toast.info("Feature not available");
-    }
+    };
 
     return (
         <div className="centered-wrapper">
@@ -74,7 +90,7 @@ const Profile = () => {
                                 <div className="border-end me-4">
                                     <div className="me-5 text-light-emphasis">
                                         <p className="fw-bold mb-0">Shipping Details</p>
-                                        <p className="mb-0 text-capitalize">address</p>
+                                        <p className="mb-0 text-capitalize">M/575 Noida Sector 21,India,121001</p>
                                     </div>
                                 </div>
                                 <div>
@@ -86,14 +102,13 @@ const Profile = () => {
                                 </div>
                             </div>
                             <hr />
-                            <div>
+                            {/* <div>
                                 {
                                     data.map(item => {
-                                        const image = item.img.split(',')
-                                        let count = 0;
+                                        const images = item.img.split(',');
                                         return (
                                             <div key={item._id} className="d-flex overflow-scroll">
-                                                {image.map((imgSrc, index) => (
+                                                {images.map((imgSrc, index) => (
                                                     <div className="card me-2" key={index} style={{ width: '10rem' }}>
                                                         <img src={imgSrc} className="card_img" alt="Order item" />
                                                     </div>
@@ -102,7 +117,7 @@ const Profile = () => {
                                         )
                                     })
                                 }
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>
