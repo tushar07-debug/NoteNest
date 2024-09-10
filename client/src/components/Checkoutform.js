@@ -3,7 +3,6 @@ import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-
 const CheckoutForm = ({ price, email, username,title,author,img}) => {
     const stripe = useStripe();
     const elements = useElements();
